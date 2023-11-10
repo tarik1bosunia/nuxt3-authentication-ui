@@ -8,5 +8,11 @@ export default defineNuxtConfig({
       '@pinia-plugin-persistedstate/nuxt',
       '@formkit/nuxt',
   ],
+  // piniaPersistedstate: {
+  //   cookieOptions: {
+  //     sameSite: 'strict',
+  //   },
+  //   // storage: 'localStorage'
+  // },
   
 })

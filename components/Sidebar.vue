@@ -1,5 +1,8 @@
 <script lang="ts" setup>
+import { useAuthStore } from '@/stores/auth';
+const authStore = useAuthStore()
 const onLogout = async () =>{
+    authStore.$reset()
     await navigateTo('/account/login', {replace: true})
 }
 </script>

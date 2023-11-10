@@ -1,5 +1,7 @@
 <script setup>
-const isAuthenticated = ref(true)
+import { useAuthStore } from '@/stores/auth';
+const authStore = useAuthStore()
+
 const isMobileMenuOpened = ref(false)
 </script>
 
@@ -23,14 +25,14 @@ const isMobileMenuOpened = ref(false)
                                 Contact
                             </NuxtLink>
 
-                            <NuxtLink v-if="isAuthenticated" to="/user/dashboard"
+                            <NuxtLink v-if="authStore.isAuthenticated" to="/user/dashboard"
                                 class="px-3 py-2 rounded-md text-sm font-medium text-white hover:text-gray-300">
                                 Dashboard
                             </NuxtLink>
                         </div>
                     </div>
                 </div>
-                <div v-if="!isAuthenticated" class="hidden md:block ">
+                <div v-if="!authStore.isAuthenticated" class="hidden md:block ">
                     <div class="ml-4 md:ml-6 flex items-center">
                         <NuxtLink to="/account/login" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rouunded">
                             Login</NuxtLink>
@@ -68,7 +70,7 @@ const isMobileMenuOpened = ref(false)
                                     Contact
                                 </NuxtLink>
 
-                                <NuxtLink v-if="isAuthenticated" to="/user/dashboard"
+                                <NuxtLink v-if="authStore.isAuthenticated" to="/user/dashboard"
                                     class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 "
                                     @click="isMobileMenuOpened = false">
                                     Dashboard
@@ -76,7 +78,7 @@ const isMobileMenuOpened = ref(false)
 
                             </div>
                         </div>
-                        <div v-if="!isAuthenticated">
+                        <div v-if="!authStore.isAuthenticated">
                             <div class="px-5 py-2 mb-5 ">
                                 <NuxtLink to="/account/login"
                                     class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded w-full "

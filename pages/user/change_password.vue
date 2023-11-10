@@ -23,7 +23,7 @@ const submitChangePasswordForm = async(formData: cahngePasswordFormInput)=>{
                 >
                 <FormKit type="password" label="New Password" name="new_password" validation="required" placeholder="Enter a new password..."/>
                 <FormKit type="password" label="Confirm Password" name="confirm_new_password" validation="required" placeholder="confirm new password..."/>
-                <FormKit type="password" label="Confirm Password" name="password" validation="required" placeholder="enter your current password..."/>
+                <FormKit type="password" label="Old Password" name="password" validation="required" placeholder="enter your current password..."/>
             </FormKit>
             </div>
         </div>
